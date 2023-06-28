@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(:params)
+    @list = List.find(params[:id])
   end
 
   def new
@@ -12,6 +12,8 @@ class ListsController < ApplicationController
   end
 
   def create
-    
+    @list = List.new(params[:name])
+    @list.save
+    redirect_to list_path(@list)
   end
 end

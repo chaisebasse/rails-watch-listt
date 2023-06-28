@@ -1,0 +1,9 @@
+<p>Yoyoyoyo</p>
+
+<% @lists.each do |list| %>
+  <%= link_to list.name, list_path(list) %>
+<% end %>
+
+<%= link_to new_list_path do %>
+  <i class="fa-solid fa-plus fa-beat-fade">C r eate a List !</i>
+<% end %>
